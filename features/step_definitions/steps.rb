@@ -1,3 +1,4 @@
+# Scenario: I can navigate to the new food form
 Given("I navigate to the food website {string}") do |string|
   visit "/foods"
 end
@@ -25,3 +26,5 @@ end
 Then("a back link") do
 find_link('Back')
 end
+
+# Scenario: I can enter food and rating into form and data is saved
