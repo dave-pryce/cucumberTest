@@ -1,35 +1,33 @@
-require 'selenium-webdriver'
-driver = Selenium::WebDriver.for :firefox
+
 
 
 # Scenario: I can navigate to the new food form
 Given("I navigate to the food website {string}") do |string|
-  driver.navigate.to "http://localhost:3000/foods"
+  visit "/foods"
 end
 
 When("I click on {string}") do |string|
-  driver.find_element(:id, 'New_Food').click
+  click_link('New Food')
 end
 
 Then("the new food form is displayed") do
-  #driver.getCurrentUrl() 
+  have_current_path("/foods/new")
 end
 
 Then("there is a name field") do
-  driver.find_element(:id, 'food_name')
+  find_field('Name')
 end
 
 Then("there is a rating field") do
-driver.find_element(:id, 'food_rating')
+find_field('Rating')
 end
 
 Then("there is a save button") do
-driver.find_element(:id, 'save')
+find_button('Create Food')
 end
 
-Then("there is a back link") do
-driver.find_element(:id, 'back')
-driver.close
+Then("a back link") do
+find_link('Back')
 end
 
 # Scenario: I can enter food and rating into form and data is saved

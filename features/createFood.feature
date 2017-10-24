@@ -1,4 +1,6 @@
-Feature: As A foodie
+Feature: Foodie
+
+As A foodie
 I want to be able to rate my food
 So that I can track which is my favourite
 
@@ -10,7 +12,7 @@ Then the new food form is displayed
 And there is a name field
 And there is a rating field
 And there is a save button
-And a back link
+And there is a back link
 
 
 #Scenario: I can enter food and rating into form and data is saved
